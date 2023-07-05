@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2d2020;
+    color: #fff;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-meal img {
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+p {
+    width: 200px;
+}
+
+
+
+
+
