@@ -22,6 +22,7 @@ export function SearchBar(props) {
         type='text' 
         name='search'
         placeholder='Please enter meal name here'
+        autoComplete='off'
         value={searchItem}
         onChange={onSearch}
         />
