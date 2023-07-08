@@ -8,7 +8,7 @@ export default function App() {
   return (
     
     <>
-    <div className="text-red" >Hello, welcome to FoodZone</div>
+    <h3 className="text-red" >Hello, welcome to FoodZone</h3>
     <SearchBar />
     <Meal />
     </>
