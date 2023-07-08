@@ -1,19 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
+import { Meal } from './Meal'
 
-export function SearchBar(props) {
-    const [searchItem, setSearchItem] = useState('')
-
-    function onSearch(e) {
-      
-      setSearchItem(e.target.value)
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        console.log('submitted')
-
-    }
+export function SearchBar({searchTerm, onSearch, handleSubmit}) {
+    
 
   return (
     <>
@@ -21,12 +11,12 @@ export function SearchBar(props) {
         <input 
         type='text' 
         name='search'
-        placeholder='Please enter meal name here'
+        placeholder='Search for meals or keywords'
         autoComplete='off'
-        value={searchItem}
+        value={searchTerm}
         onChange={onSearch}
         />
-        <button type='submit'>Submit</button>
+        <button className='btn primary-btn' type='submit'>Search</button>
     </form>
     
     </>
