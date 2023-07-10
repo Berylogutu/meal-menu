@@ -1,8 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
-import { Meal } from './Meal'
 
-export function SearchBar({searchTerm, onSearch, handleSubmit}) {
+export function SearchBar({searchTerm, setSearchTerm, isLoading, handleSubmit}) {
     
 
   return (
@@ -14,9 +12,13 @@ export function SearchBar({searchTerm, onSearch, handleSubmit}) {
         placeholder='Search for meals or keywords'
         autoComplete='off'
         value={searchTerm}
-        onChange={onSearch}
+        onChange={e => setSearchTerm(e.target.value)}
+        disabled={isLoading}
         />
-        <button className='btn primary-btn' type='submit'>Search</button>
+        <button 
+        className='btn primary-btn' 
+        type='submit'
+        >Search</button>
     </form>
     
     </>

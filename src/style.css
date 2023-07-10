@@ -13,10 +13,14 @@ body {
     align-items: center;
 }
 
+
+
 .single-meal img {
     width: 200px;
     border-radius: 5px;
     border: 2px solid #fff;
+    display: grid;
+    
 }
 
 p {

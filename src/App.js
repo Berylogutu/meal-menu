@@ -3,38 +3,44 @@ import { Meal } from './Meal'
 import './style.css'
 import { useState, useEffect } from "react";
 
+const apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
+
 export default function App() {
 
-  const [meal, setMeal] = useState({});
+  const [meal, setMeal] = useState([]);
   const [showRecipe, setShowRecipe] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
     
 
   useEffect(() => {
-    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-      .then(res => res.json())
-      .then(data => setMeal(data.meals[0]))
-      .catch(err => console.log(err));
+    searchMeal()
   }, []);
 
-  function onSearch(e) {
-     console.log(e.target.value) 
-    setSearchTerm(e.target.value)
+  const searchMeal = async () => {
+    setIsLoading(true)
+    const url = apiUrl + searchTerm;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    setMeal(data.meals)
+
+    console.log(data.meals)
+    console.log(data.meals)
+    setIsLoading(false)
+
   }
 
-  function handleSubmit(e, searchTerm) {
+
+
+  function handleSubmit(e) {
       e.preventDefault()
-    if(searchTerm === '' ){
-      return 'Please enter a serach term'
-    } else if (searchTerm === null) {
-      return 'Sorry, meal not found'
-    } else if(searchTerm === meal.strCategory) {
-      setMeal(prevMeal => ({searchTerm}))
-    }
+
+      searchMeal()
+
 
   }
-
 
 
   function showInfo(e) {
@@ -56,16 +62,20 @@ export default function App() {
     
     <SearchBar
     searchTerm={searchTerm}
-    onSearch={onSearch}
+    setSearchTerm={setSearchTerm}
     handleSubmit={handleSubmit}
+    isLoading={isLoading}
     
     />
+
     <Meal 
     meal={meal}
     showRecipe={showRecipe}
     showInfo={showInfo}
-    
+          
     />
+
+    
     </>
   )
 }
