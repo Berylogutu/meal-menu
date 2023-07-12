@@ -3,8 +3,8 @@
 }
 
 body {
-    background-color: #2d2020;
-    color: #fff;
+    background: #db9f0a;
+    /* color: #fff; */
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
@@ -15,21 +15,21 @@ body {
 
 
 
-.single-meal img {
+/* .single-meal img {
     width: 200px;
     border-radius: 5px;
     border: 2px solid #fff;
     display: grid;
     
-}
+} */
 
-p {
+/* p {
     width: 200px;
 }
 
 .btn {
     margin: 5px;
-}
+} */
 
 
 

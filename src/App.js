@@ -57,8 +57,8 @@ export default function App() {
 
   return (
     
-    <>
-    <h3 className="text-red" >Hello, welcome to FoodZone</h3>
+    <div className="px-2">
+    <h1 className="font-bold flex text-center items-center justify-center tracking-wider p-3 text-white text-xl" >Hello, welcome to FoodZone</h1>
     
     <SearchBar
     searchTerm={searchTerm}
@@ -68,14 +68,18 @@ export default function App() {
     
     />
 
-    <Meal 
+    <div>
+      {meal ?     <Meal 
     meal={meal}
     showRecipe={showRecipe}
     showInfo={showInfo}
           
-    />
+    /> : 'Meal not found'}
+    </div>
+
+
 
     
-    </>
+    </div>
   )
 }

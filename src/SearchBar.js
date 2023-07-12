@@ -5,8 +5,8 @@ export function SearchBar({searchTerm, setSearchTerm, isLoading, handleSubmit}) 
 
   return (
     <>
-    <form onSubmit={handleSubmit} >
-        <input 
+    <form className='p-10' onSubmit={handleSubmit} >
+        <input className='overflow-hidden w-[75%] p-1 rounded-lg border-0'
         type='text' 
         name='search'
         placeholder='Search for meals or keywords'
@@ -16,7 +16,7 @@ export function SearchBar({searchTerm, setSearchTerm, isLoading, handleSubmit}) 
         disabled={isLoading}
         />
         <button 
-        className='btn primary-btn' 
+        className='btn primary-btn bg-white p-1 rounded-lg mx-1' 
         type='submit'
         >Search</button>
     </form>
