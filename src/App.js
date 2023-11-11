@@ -13,9 +13,7 @@ export default function App() {
 
     
 
-  useEffect(() => {
-    searchMeal()
-  }, []);
+
 
   const searchMeal = async () => {
     setIsLoading(true)
@@ -29,6 +27,9 @@ export default function App() {
     setIsLoading(false)
 
   }
+  useEffect(() => {
+    searchMeal()
+  }, []);
 
 
   function handleSubmit(e) {

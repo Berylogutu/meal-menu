@@ -19,7 +19,7 @@ export function Meal({meal}) {
       />
       <div className=' py-2 bg-black text-white rounded-b-lg max-w-lg max-h-lg'>
         <h3 className="flex">{strMeal}</h3>
-        <a href={'https://www.themealdb.com/meal/' + idMeal} target='_blank' className="italic text-sm bg-orange" >See Recipe</a>
+        <a href={'https://www.themealdb.com/meal/' + idMeal} target='_blank' rel="noreferrer" className="italic text-sm bg-orange" >See Recipe</a>
       </div>
           
           
