@@ -11,11 +11,7 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
-    
-
-
-
-  const searchMeal = async () => {
+  async function searchMeal(){
     setIsLoading(true)
     const url = apiUrl + searchTerm;
     const res = await fetch(url);
@@ -26,10 +22,14 @@ export default function App() {
     console.log(data.meals)
     setIsLoading(false)
 
-  }
+  }   
+
+
+
+
   useEffect(() => {
-    searchMeal()
-  }, []);
+    searchMeal();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
   function handleSubmit(e) {
